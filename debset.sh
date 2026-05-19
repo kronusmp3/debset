@@ -380,6 +380,14 @@ setup_lob_test_service() {
 	echo "### aby zmienić uruchamiany program edytuj ~/lob.sh ###"
 }
 
+disable_updates() {
+	gsettings set org.gnome.software download-updates false
+	gsettings set org.gnome.software allow-updates false
+	systemctl disable --now unattended-upgrades
+	systemctl disable --now apt-daily.timer
+	systemctl disable --now apt-daily-upgrade.timer
+}
+
 obfuscate_terminal() {
 	local target="/etc/bash.bashrc"
 
@@ -544,7 +552,7 @@ netprofilswitcher() {
 show_menu() {
     echo
     echo "=========== MENU ==========="
-    echo "1 - Wykonaj wszystko (2-9)"
+    echo "1 - Wykonaj wszystko (2-10)"
     echo "2 - Instalacja pakietów"
     echo "3 - Konfiguracja GRUB"
     echo "4 - Autologowanie"
@@ -553,6 +561,7 @@ show_menu() {
     echo "7 - zhakuj mainframe (obfuskacja terminala)"
 	echo "8 - kioskifikacja"
 	echo "9 - Stwórz Launch On Boot"
+	echo "10 - wyłącz autoupdaty"
 	echo "n - konfiguracja statycznego IP/DHCP"
 	echo "u - Update skryptu z GitHuba"
     echo "q - Wyjście"
@@ -568,6 +577,7 @@ run_all() {
 	run_section "Matrixify" obfuscate_terminal
 	run_section "LOB" setup_lob_test_service
 	run_section "Wyłącz DE" disable_de
+	run_section "Wyłącz autoupdaty" disable_updates
 	sudo reboot
 }
 
@@ -592,6 +602,7 @@ while true; do
         7) run_section "Matrixify" obfuscate_terminal ;;
         8) run_section "Kioskifikuj" kioskify ;;
 		9) run_section "LOB" setup_lob_test_service ;;
+		10) run_section "wyłącz autoupdaty" disable_updates ;;
         q) break ;;
 		n) run_section "DHCP/Static IP config" netprofilswitcher ;;
 		u)
