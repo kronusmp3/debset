@@ -54,6 +54,7 @@ Na koniec zrobi reboot.
 		 - git
 		 - gdb
 		 - putty
+		 - screen
 
 ## 3. Konfiguracja GRUB
   - ustawi naszą tapetę jako tło gruba
