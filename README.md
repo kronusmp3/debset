@@ -98,6 +98,9 @@ Obfuskacja terminala - każdy terminal, SSH itp (oprócz SU/SUDO/ROOT) domyślni
   Tworzy skrypt uruchomieniowy lob.sh w katalogu domowym oraz serwis który ten skrypt będzie wywoływać.
   Docelowo będzie usetapiać auto uruchomienie parma, ale obecnie będzie odpalać pętlę testową (również tworzona automatycznie przez tę funkcję)
   
+## 10. Wyłącz autoupdaty
+  Wyłącza autoupdaty. Brak możliwości włączenia spowrotem!
+  
 ## n. konfiguracja statycznego IP / DHCP
 Pozwala przełączać się między profilami sieciowymi. Jeśli profil nie istnieje to zostanie od razu utworzony.
 Żeby zmienić ustawienia statycznego IP należy usunąć profile i jeszcze raz wywołać właściwą funkcję.
