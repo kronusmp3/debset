@@ -74,6 +74,7 @@ install_packages() {
 		git
 		gdb
 		putty
+		screen
     )
 
     MISSING_PACKAGES=()
