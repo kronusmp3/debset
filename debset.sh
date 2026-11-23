@@ -524,7 +524,7 @@ netprofilswitcher() {
 				read -rp "IP address: " ip
 				read -rp "Gateway: " gw
 				read -rp "DNS: " dns
-				nmcli con add type ethernet ifname "$iface" con-name static ipv4.method manual ipv4.addresses "$ip" ipv4.gateway "$gw" ipv4.dns "$dns"
+				nmcli con add type ethernet ifname "$iface" con-name static ipv4.method manual ipv4.addresses "$ip/24" ipv4.gateway "$gw" ipv4.dns "$dns"
 			fi
             nmcli con up static
             ;;
