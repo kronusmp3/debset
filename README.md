@@ -1,7 +1,8 @@
 sprawdzone na:
-debian 13.3
-debian 13.4
-(pending) debian 13.7
+- debian 13.3 - chyba git
+- debian 13.4 - na pewno git
+- debian 13.7 - borked AF
+
 # Instrukcja uruchomienia:
 
 	wget https://github.com/soramenium/debset/archive/refs/heads/main.zip
