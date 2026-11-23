@@ -529,9 +529,20 @@ netprofilswitcher() {
             nmcli con up static
             ;;
         0)
-			nmcli connection delete dhcp
-			nmcli connection delete static
-			echo "usunięto profile"
+			if profile_exists "dhcp"; then
+				nmcli connection delete dhcp
+				echo "deleted dhcp"
+			else
+				echo "nie znaleziono dhcp"
+			fi
+			
+			if profile_exists "static"; then
+				nmcli connection delete static
+				echo "deleted static"
+			else
+				echo "nie znaleziono static"
+			fi
+			echo "usunięto profile (może xD)"
 			;;
 		b)
 			
