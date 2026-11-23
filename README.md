@@ -3,6 +3,12 @@ sprawdzone na:
 - debian 13.4 - na pewno git
 - debian 13.7 - borked AF
 
+# Pre-skrypt
+
+	instalując system upewnij się, że:
+	1. pozwalasz na instalację pakietów z internetu - ustawi to właściwe źródła w systemie, nie trzeba ręcznie dodawać do APT
+	2. instalujesz GUI Gnome, bez tego nic nie działa XDDD
+
 # Instrukcja uruchomienia:
 
 	wget https://github.com/soramenium/debset/archive/refs/heads/main.zip
